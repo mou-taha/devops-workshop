@@ -1,0 +1,15 @@
+name: use marketplace actions
+on: push
+
+jobs:
+  use-marketplace-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: check python installation
+        run: python --version
