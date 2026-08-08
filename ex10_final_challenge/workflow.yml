@@ -1,5 +1,7 @@
 name: final challenge
 on: 
+  pull_request:
+
   branches:
     - main
 
@@ -16,7 +18,10 @@ jobs:
           python-version: 3.11
         env:
           PROJECT_NAME: ZeroOps Production
-        run: pip install -r requirements.txt
+        run: |
+          echo "Setting up Python environment for $PROJECT_NAME"
+          pip install -r requirements.txt
+
       - name: Run tests
         run: pytest
       - name: Success
