@@ -2,13 +2,13 @@ name: action secrets
 on: push
 
 jobs: 
-  secret:
-    env:
-      MY_SECRET: ${{ secrets.API_KEY }}
+  check-secret:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Print secret
-        run: echo "Key length: ${#MY_SECRET}"
+      - name: Print secret length
+        env:
+          API_SECRET: ${{ secrets.API_KEY }}
+        run: echo "Key length: ${#API_SECRET}"
