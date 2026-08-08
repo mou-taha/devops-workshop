@@ -8,6 +8,8 @@ on:
 jobs: 
   final-challenge:
     runs-on: ubuntu-latest
+    env:
+      PROJECT_NAME: "ZeroOps"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -16,8 +18,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: 3.11
-        env:
-          PROJECT_NAME: ZeroOps Production
         run: |
           echo "Setting up Python environment for $PROJECT_NAME"
           pip install -r requirements.txt
