@@ -1,0 +1,15 @@
+name: dependecies between jobs
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: testing backend
+        run: echo "Backend tests passing"
