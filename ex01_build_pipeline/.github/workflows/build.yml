@@ -1,0 +1,14 @@
+name: build-ex00
+on: push
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        uses: actions/checkout@v3
+      - name: check version and list files
+        run: |
+          python3 --version
+          pwd
+          ls -la
