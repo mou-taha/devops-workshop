@@ -11,4 +11,4 @@ jobs:
       - name: Print secret length
         env:
           API_SECRET: ${{ secrets.API_KEY }}
-        run: echo "Key length:${#API_SECRET}"
+        run: 'echo "Key length: ${#API_SECRET}"'
